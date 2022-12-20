@@ -120,7 +120,9 @@ Error OS_X11::initialize(const VideoMode &p_desired, int p_video_driver, int p_a
 	}
 
 	/** XLIB INITIALIZATION **/
-	x11_display = XOpenDisplay(NULL);
+
+	WARN_PRINT("XLIB INITIALIZATION");
+	x11_display = XOpenDisplay(":0.0");
 
 	if (!x11_display) {
 		ERR_PRINT("X11 Display is not available");
